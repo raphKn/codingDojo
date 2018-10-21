@@ -17,13 +17,13 @@ public class JugendMannschaftTestdataBuilder {
     private Liga liga = new Liga("Kreisliga");
     private List<Trainer> trainerteam = Collections.singletonList(new TrainerTestdataBuilder().build());
     private List<Spieler> spieler = Arrays.asList(
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler()
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler()
     );
     private Altersklasse altersklasse = Altersklasse.A_Jugend;
 
@@ -39,6 +39,11 @@ public class JugendMannschaftTestdataBuilder {
 
     public JugendMannschaftTestdataBuilder altersklasse(Altersklasse altersklasse) {
         this.altersklasse = altersklasse;
+        return this;
+    }
+
+    public JugendMannschaftTestdataBuilder trainerteam(List<Trainer> trainerteam) {
+        this.trainerteam = trainerteam;
         return this;
     }
 
