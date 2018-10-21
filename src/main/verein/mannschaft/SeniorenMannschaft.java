@@ -1,8 +1,7 @@
 package verein.mannschaft;
 
-import verein.training.Material;
 import verein.training.Trainingsplan;
-import verein.utils.SetFactory;
+import verein.training.uebungen.Uebung;
 
 public class SeniorenMannschaft extends Mannschaft {
     public SeniorenMannschaft(LeistungsTyp leistungsTyp) {
@@ -10,13 +9,7 @@ public class SeniorenMannschaft extends Mannschaft {
     }
 
     @Override
-    Trainingsplan getWarmlaufen() {
-        return new Trainingsplan(SetFactory.emptySet(), 40);
-    }
-
-    @Override
-    Trainingsplan getDoppelpass() {
-        Material baelle = new Material("Ball", getSpielerAnzahl() / 2);
-        return new Trainingsplan(SetFactory.asSet(baelle), 15);
+    Trainingsplan getTrainingsplan(Uebung uebung) {
+        return uebung.calculateTrainingsplan(this);
     }
 }

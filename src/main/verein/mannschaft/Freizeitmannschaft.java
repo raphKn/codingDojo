@@ -2,9 +2,8 @@ package verein.mannschaft;
 
 import java.util.Optional;
 import verein.trainer.Trainer;
-import verein.training.Material;
 import verein.training.Trainingsplan;
-import verein.utils.SetFactory;
+import verein.training.uebungen.Uebung;
 
 public class Freizeitmannschaft extends Mannschaft {
 
@@ -14,16 +13,9 @@ public class Freizeitmannschaft extends Mannschaft {
         super(leistungsTyp);
     }
 
-    Trainingsplan getWarmlaufen() {
-        return getTrainer().map((t) -> new Trainingsplan(SetFactory.emptySet(), 35)
-        ).orElse(new Trainingsplan(SetFactory.emptySet(), 20));
-    }
-
     @Override
-    Trainingsplan getDoppelpass() {
-        return new Trainingsplan(
-            SetFactory.asSet(new Material("Stangen", 5), new Material("Ball", getSpielerAnzahl())),
-            getSpielerAnzahl() * 5);
+    Trainingsplan getTrainingsplan(Uebung uebung) {
+        return uebung.calculateTrainingsplan(this);
     }
 
     public Optional<Trainer> getTrainer() {

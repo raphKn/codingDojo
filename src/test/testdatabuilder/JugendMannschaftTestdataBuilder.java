@@ -6,7 +6,6 @@ import java.util.List;
 import verein.mannschaft.Jugendmannschaft;
 import verein.mannschaft.LeistungsTyp;
 import verein.mannschaft.Liga;
-import verein.mannschaft.TrainingszeitTestdataBuilder;
 import verein.mannschaft.altersklasse.AJugend;
 import verein.mannschaft.altersklasse.Altersklasse;
 import verein.spieler.Spieler;

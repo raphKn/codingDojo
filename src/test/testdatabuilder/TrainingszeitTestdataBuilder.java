@@ -1,6 +1,7 @@
-package verein.mannschaft;
+package testdatabuilder;
 
 import java.time.LocalTime;
+import verein.mannschaft.Trainingszeit;
 
 public class TrainingszeitTestdataBuilder {
 

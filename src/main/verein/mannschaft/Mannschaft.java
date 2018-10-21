@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import verein.spieler.Spieler;
 import verein.training.Trainingsplan;
+import verein.training.uebungen.Uebung;
 
 public abstract class Mannschaft {
     private List<Spieler> spielende = new ArrayList<>();
@@ -46,8 +47,6 @@ public abstract class Mannschaft {
         return spielende.size();
     }
 
-    abstract Trainingsplan getWarmlaufen();
-
-    abstract Trainingsplan getDoppelpass();
+    abstract Trainingsplan getTrainingsplan(Uebung uebung);
 
 }

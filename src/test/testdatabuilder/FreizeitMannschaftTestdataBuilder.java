@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import verein.mannschaft.Freizeitmannschaft;
 import verein.mannschaft.LeistungsTyp;
-import verein.mannschaft.TrainingszeitTestdataBuilder;
 import verein.spieler.Spieler;
 import verein.trainer.Trainer;
 
@@ -12,11 +11,11 @@ public class FreizeitMannschaftTestdataBuilder {
 
     private LeistungsTyp leistungsTyp = LeistungsTyp.ANFAENGER;
     private List<Spieler> spieler = Arrays.asList(
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler()
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler()
     );
     private Trainer trainer = null;
 

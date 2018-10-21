@@ -4,24 +4,23 @@ import java.util.Arrays;
 import java.util.List;
 import verein.mannschaft.LeistungsTyp;
 import verein.mannschaft.SeniorenMannschaft;
-import verein.mannschaft.TrainingszeitTestdataBuilder;
 import verein.spieler.Spieler;
 
 public class SeniorenMannschaftTestdataBuilder {
 
     private LeistungsTyp leistungsTyp = LeistungsTyp.ANFAENGER;
     private List<Spieler> spieler = Arrays.asList(
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler(),
-            createSpieler()
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler(),
+        createSpieler()
     );
 
     public SeniorenMannschaft build() {

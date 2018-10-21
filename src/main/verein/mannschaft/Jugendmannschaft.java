@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import verein.mannschaft.altersklasse.Altersklasse;
 import verein.trainer.Trainer;
-import verein.training.Material;
 import verein.training.Trainingsplan;
-import verein.utils.SetFactory;
+import verein.training.uebungen.Uebung;
 
 public class Jugendmannschaft extends Mannschaft {
     private List<Trainer> trainerteam = new ArrayList<>();
@@ -15,6 +14,14 @@ public class Jugendmannschaft extends Mannschaft {
 
     public Jugendmannschaft(LeistungsTyp leistungsTyp) {
         super(leistungsTyp);
+    }
+
+    public Altersklasse getAltersklasse() {
+        return altersklasse;
+    }
+
+    public void setAltersklasse(Altersklasse altersklasse) {
+        this.altersklasse = altersklasse;
     }
 
     public List<Trainer> getTrainerteam() {
@@ -41,26 +48,15 @@ public class Jugendmannschaft extends Mannschaft {
         this.liga = liga;
     }
 
-    public Trainingsplan getWarmlaufen() {
-        return new Trainingsplan(SetFactory.emptySet(), altersklasse.getWarmlaufdauer());
-    }
-
     @Override
-    Trainingsplan getDoppelpass() {
-        int trainerAnzahl = getTrainerAnzahlForDoppelpass();
-
-        return new Trainingsplan(SetFactory.asSet(new Material("Ball", (getSpielerAnzahl() + trainerAnzahl) / 3)),
-            25);
+    Trainingsplan getTrainingsplan(Uebung uebung) {
+        return uebung.calculateTrainingsplan(this);
     }
 
-    private int getTrainerAnzahlForDoppelpass() {
+    public int getTrainerAnzahlForDoppelpass() {
         if (altersklasse.isTrainerTeilnehmerBeiDopperlpass()) {
             return getTrainerAnzahl();
         }
         return 0;
-    }
-
-    public void setAltersklasse(Altersklasse altersklasse) {
-        this.altersklasse = altersklasse;
     }
 }
