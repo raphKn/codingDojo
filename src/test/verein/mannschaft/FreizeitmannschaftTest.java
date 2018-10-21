@@ -51,4 +51,17 @@ public class FreizeitmannschaftTest {
         assertThat(doppelpass.toString(),
             is("Trainingsplan{materialListe=[Material{bezeichnung='Ball', menge=5}], dauerInMinuten=10}"));
     }
+
+/*    @Test
+    public void getStabilisationAndDoppelpass() {
+        Freizeitmannschaft mannschaftMitTrainer = new FreizeitMannschaftTestdataBuilder().trainer(new TrainerTestdataBuilder().build()).build();
+
+        SerielleUebungen uebungen = new SerielleUebungen();
+        uebungen.addUebung(new Stabilisation());
+        uebungen.addUebung(new Doppelpass());
+
+        Trainingsplan trainingsplan = mannschaftMitTrainer.getTrainingsplan(uebungen);
+
+        assertThat(trainingsplan.toString(), is("Trainingsplan{materialListe=[Material{bezeichnung='Stangen', menge=5}, Material{bezeichnung='Ball', menge=6}], dauerInMinuten=37}"));
+    }*/
 }
