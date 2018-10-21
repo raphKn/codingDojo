@@ -19,4 +19,10 @@ public class SeniorenMannschaftTest {
         SeniorenMannschaft build = new SeniorenMannschaftTestdataBuilder().build();
         assertThat(build.getDoppelpass().toString(), is("Trainingsplan{materialListe=[Material{bezeichnung='Ball', menge=5}], dauerInMinuten=15}"));
     }
+
+    /*@Test
+    public void getStabilisation() {
+        SeniorenMannschaft build = new SeniorenMannschaftTestdataBuilder().build();
+        assertThat(build.getTrainingsplan(new Stabilisation()).toString(), is("Trainingsplan{materialListe=[Material{bezeichnung='Ball', menge=11}], dauerInMinuten=22}"));
+    }*/
 }

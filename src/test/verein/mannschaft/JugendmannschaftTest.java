@@ -64,6 +64,15 @@ public class JugendmannschaftTest {
         assertThat(jugendmannschaft.getDoppelpass().toString(), is("Trainingsplan{materialListe=[Material{bezeichnung='Ball', menge=3}], dauerInMinuten=25}"));
     }
 
+/*    @Test
+    public void getStabilisation() {
+        Jugendmannschaft jugendmannschaft = new JugendMannschaftTestdataBuilder()
+            .altersklasse(new CJugend())
+            .build();
+
+        assertThat(jugendmannschaft.getTrainingsplan(new Stabilisation()).toString(), is("Trainingsplan{materialListe=[Material{bezeichnung='Ball', menge=7}], dauerInMinuten=14}"));
+    }*/
+
     private List<Trainer> createThreeTrainerTrainerteam() {
         Trainer trainer = new TrainerTestdataBuilder().build();
         return Arrays.asList(trainer, trainer, trainer);
