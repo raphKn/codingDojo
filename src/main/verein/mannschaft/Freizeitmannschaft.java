@@ -26,7 +26,7 @@ public class Freizeitmannschaft extends Mannschaft {
             getSpielerAnzahl() * 5);
     }
 
-    private Optional<Trainer> getTrainer() {
+    public Optional<Trainer> getTrainer() {
         if (trainer == null) {
             return Optional.empty();
         }

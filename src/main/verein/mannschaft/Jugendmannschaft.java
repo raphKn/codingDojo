@@ -2,7 +2,7 @@ package verein.mannschaft;
 
 import java.util.ArrayList;
 import java.util.List;
-import verein.UnsupportedTrainingsinheitException;
+import verein.mannschaft.altersklasse.Altersklasse;
 import verein.trainer.Trainer;
 import verein.training.Material;
 import verein.training.Trainingsplan;
@@ -42,23 +42,22 @@ public class Jugendmannschaft extends Mannschaft {
     }
 
     public Trainingsplan getWarmlaufen() {
-        switch (altersklasse) {
-            case A_Jugend:
-                return new Trainingsplan(SetFactory.emptySet(), 30);
-            case B_Jugend:
-                return new Trainingsplan(SetFactory.emptySet(), 25);
-            case C_Jugend:
-                return new Trainingsplan(SetFactory.emptySet(), 20);
-            case D_Jugend:
-                return new Trainingsplan(SetFactory.emptySet(), 15);
-        }
-        throw new UnsupportedTrainingsinheitException("Warmlaufen ist für diese AK nicht verfügbar");
+        return new Trainingsplan(SetFactory.emptySet(), altersklasse.getWarmlaufdauer());
     }
 
     @Override
     Trainingsplan getDoppelpass() {
-        return new Trainingsplan(SetFactory.asSet(new Material("Ball", (getSpielerAnzahl() + getTrainerAnzahl()) / 3)),
+        int trainerAnzahl = getTrainerAnzahlForDoppelpass();
+
+        return new Trainingsplan(SetFactory.asSet(new Material("Ball", (getSpielerAnzahl() + trainerAnzahl) / 3)),
             25);
+    }
+
+    private int getTrainerAnzahlForDoppelpass() {
+        if (altersklasse.isTrainerTeilnehmerBeiDopperlpass()) {
+            return getTrainerAnzahl();
+        }
+        return 0;
     }
 
     public void setAltersklasse(Altersklasse altersklasse) {
