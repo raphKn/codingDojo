@@ -3,6 +3,7 @@ package verein.training.uebungen;
 import verein.mannschaft.Freizeitmannschaft;
 import verein.mannschaft.Jugendmannschaft;
 import verein.mannschaft.SeniorenMannschaft;
+import verein.training.EinfacherTrainingsplan;
 import verein.training.Material;
 import verein.training.Trainingsplan;
 import verein.utils.SetFactory;
@@ -28,7 +29,7 @@ public class Stabilisation implements Uebung {
     }
 
     private Trainingsplan createTrainingWithBaellen(int menge) {
-        return new Trainingsplan(SetFactory.asSet(new Material("Ball", menge)), (menge) * 2);
+        return new EinfacherTrainingsplan(SetFactory.asSet(new Material("Ball", menge)), (menge) * 2);
     }
 
 }

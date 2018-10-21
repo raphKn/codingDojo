@@ -14,7 +14,7 @@ public class Freizeitmannschaft extends Mannschaft {
     }
 
     @Override
-    Trainingsplan getTrainingsplan(Uebung uebung) {
+    public Trainingsplan getTrainingsplan(Uebung uebung) {
         return uebung.calculateTrainingsplan(this);
     }
 

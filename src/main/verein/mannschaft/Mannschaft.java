@@ -47,6 +47,6 @@ public abstract class Mannschaft {
         return spielende.size();
     }
 
-    abstract Trainingsplan getTrainingsplan(Uebung uebung);
+    public abstract Trainingsplan getTrainingsplan(Uebung uebung);
 
 }
