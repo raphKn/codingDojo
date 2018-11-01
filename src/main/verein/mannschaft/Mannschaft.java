@@ -3,10 +3,8 @@ package verein.mannschaft;
 import java.util.ArrayList;
 import java.util.List;
 import verein.spieler.Spieler;
-import verein.training.Trainingsplan;
-import verein.training.uebungen.Uebung;
 
-public abstract class Mannschaft {
+public abstract class Mannschaft implements Trainierende {
     private List<Spieler> spielende = new ArrayList<>();
     private List<Trainingszeit> trainingszeiten = new ArrayList<>();
     private LeistungsTyp leistungsTyp;
@@ -46,7 +44,5 @@ public abstract class Mannschaft {
     public int getSpielerAnzahl() {
         return spielende.size();
     }
-
-    public abstract Trainingsplan getTrainingsplan(Uebung uebung);
 
 }

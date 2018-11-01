@@ -1,8 +1,19 @@
 package verein.mannschaft;
 
+import org.junit.Test;
+import testdatabuilder.FreizeitMannschaftTestdataBuilder;
+import testdatabuilder.JugendMannschaftTestdataBuilder;
+import verein.training.Trainingsplan;
+import verein.training.uebungen.Doppelpass;
+import verein.training.uebungen.SerielleUebungen;
+import verein.training.uebungen.Stabilisation;
+
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 public class ParalellerTrainingsbetriebTest {
 
-/*    @Test
+    @Test
     public void JugendWithFreizeit() {
         Jugendmannschaft jugendmannschaft = new JugendMannschaftTestdataBuilder().build();
         Freizeitmannschaft freizeitmannschaft = new FreizeitMannschaftTestdataBuilder().build();
@@ -35,5 +46,5 @@ public class ParalellerTrainingsbetriebTest {
 
         assertThat(accept.toString(),
             is("Trainingsplan{materialListe=[Material{bezeichnung='Ball', menge=17}, Material{bezeichnung='Stangen', menge=5}], dauerInMinuten=39}"));
-    }*/
+    }
 }
